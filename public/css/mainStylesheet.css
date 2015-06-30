@@ -1,0 +1,124 @@
+body{
+background-color: #000000;
+    color: #dcdcdc;
+}
+
+.container{
+background-color: #000000;
+    /*background: #dbdce2;  Old browsers */
+    /*background: -moz-radial-gradient(center, ellipse cover,  #dbdce2 8%, #544e4e 90%);  FF3.6+ */
+    /*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(8%,#dbdce2), color-stop(90%,#544e4e));  Chrome,Safari4+ */
+    /*background: -webkit-radial-gradient(center, ellipse cover,  #dbdce2 8%,#544e4e 90%);  Chrome10+,Safari5.1+ */
+    /*background: -o-radial-gradient(center, ellipse cover,  #dbdce2 8%,#544e4e 90%);  Opera 12+ */
+    /*background: -ms-radial-gradient(center, ellipse cover,  #dbdce2 8%,#544e4e 90%);  IE10+ */
+    /*background: radial-gradient(ellipse at center,  #dbdce2 8%,#544e4e 90%);  W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdce2', endColorstr='#544e4e',GradientType=1 );  IE6-9 fallback on horizontal gradient */
+    /*background-repeat: repeat;*/
+    color: #dcdcdc;
+
+}
+#banner{
+    padding:8px;
+}
+#banner img{
+    /*-webkit-border-radius: 150px;*/
+    /*-moz-border-radius: 150px;*/
+    /*border-radius: 150px;*/
+    /*-webkit-background-clip: padding-box;*/
+    /*-moz-background-clip:    padding;*/
+    /*background-clip:         padding-box;*/
+    width:100%;
+    height:267px;
+    /*background: url("../img/banner_f.png") no-repeat center center ;*/
+    border: 5px solid #dcdcdc;
+    background-color: black;
+    overflow: hidden;
+    -webkit-box-shadow: 5px 5px 5px #ea1700;
+    box-shadow: 5px 5px 5px #ea1700;
+    margin-bottom: 12px;
+}
+
+#content{
+    font-size: 1em;
+    text-align: justify;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#quotes p{
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: justify;
+}
+
+footer{
+    text-align: right;
+    font-size: 0.7em;
+    font-weight: bold;
+    color:red;
+}
+
+ul>li{
+    text-align: center;
+}
+
+.citeHeader{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.teksty{
+border: 2px groove #843534;
+    margin-bottom: 25px;
+}
+
+.teksty-logged>form>input{
+    background-color: black;
+}
+
+.contents{
+    padding:4px 12px 4px 12px;
+    text-indent: 5%;
+}
+
+.teksty >.page-header{
+    border-bottom-color: #ebcccc;
+margin:1px;
+    padding:2px;
+}
+.teksty >.page-header >.teksty-header{
+    margin-top: 0;
+    text-align: center;
+    color: #262626;
+}
+.teksty >.page-header >h6 {
+text-align: right;
+}
+.date-author{
+    color: red;
+}
+/*changing bootstrap color classes for navbar*/
+
+.navbar-inverse{
+    border: 1px solid red;
+    padding:3px;
+}
+
+.navbar-inverse > li> a, .dropdown-menu > li > a{
+ color: #ff320d;
+    font-size: 1em;
+}
+.dropdown-menu > li > a{
+    background-color: #222;
+}
+
+.navbar-inverse > li > a:hover, .navbar-inverse  > li > a:focus {
+    color: #7c7f83;
+    font-size: 1em;
+}
+

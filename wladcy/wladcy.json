@@ -1,0 +1,252 @@
+{
+"legendarni":[
+{
+  "numer":"1",  "nazwa":"Siemowit", "panowanie":"IX-X wiek", "panstwo":"Polanie", "funkcja":"Wódz Polan", "narodziny":"brak danych", "zgon":"brak danych", "narodowosc":"polska",
+"info":"Władanie niepotwierdzone przez ówczesne źródła", "epoka":"Średniowiecze"
+},
+{
+  "numer":"2",  "nazwa":"Lestek", "panowanie":"X wiek", "panstwo":"Polanie", "funkcja":"Wódz Polan", "narodziny":"brak danych", "zgon":"brak danych", "narodowosc":"polska",
+  "info":"Władanie niepotwierdzone przez ówczesne źródła", "epoka":"Średniowiecze"
+},
+{
+  "numer":"3",  "nazwa":"Siemomysł", "panowanie":"X wiek", "panstwo":"Polanie", "funkcja":"Wódz Polan", "narodziny":"brak danych", "zgon":"brak danych", "narodowosc":"polska",
+  "info":"Władanie niepotwierdzone przez ówczesne źródła", "epoka":"Średniowiecze"
+}
+],
+"piastowie":[
+  {
+  "numer":"1",  "nazwa":"Mieszko I", "panowanieStart":"960", "panowanieKoniec":"992", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski", "narodziny":"930", "zgon":"992", "narodowosc":"polska",
+"info":"Pierwszy władca Polski, potwierdzony przez ówczesne źródła", "epoka":"Średniowiecze"
+  },
+{
+  "numer":"2",  "nazwa":"Bolesław I Chrobry", "panowanieStart":"992", "panowanieKoniec":"1025", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski(992-1025), Książe Czech (1003-1004), Król Polski (1025)", "narodziny":"967", "zgon":"1025", "narodowosc":"polska", "info":"Pierwszy król Polski", "epoka":"Średniowiecze"
+  },
+{
+  "numer":"3",  "nazwa":"Mieszko II Lambert", "panowanieStart":"1025", "panowanieKoniec":"1031", "panstwo":"Polska Piastowska", "funkcja":"Król Polski", "narodziny":"990", "zgon":"1034", "narodowosc":"polska", "info":"Drugi król Polski, znany też jak Mieszko II Gnuśny", "epoka":"Średniowiecze"
+  },
+{
+  "numer":"4",  "nazwa":"Bezprym", "panowanieStart":"1031", "panowanieKoniec":"1032", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski", "narodziny":"986", "zgon":"1032", "narodowosc":"polska", "info":"Starszy brat Mieszka II Lamberta", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"5",  "nazwa":"Mieszko II Lambert", "panowanieStart":"1032", "panowanieKoniec":"1034", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"W 1032 roku zrzekł się korony. W latach 1032-1033 współrządził z braćmi: Otto Bolesławowicem i Dytrykiem", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"6",  "nazwa":"Kazimierz I Odnowiciel", "panowanieStart":"1039", "panowanieKoniec":"1058", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski", "narodziny":"1016", "zgon":"1058", "narodowosc":"polska", "info":"Nie wiadomo kto sprawował władzę w latach 1034-1038. Niektóre źródła wspominają o Bolesławie Zapomnianym.", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"7",  "nazwa":"Bolesław II Śmiały", "panowanieStart":"1058", "panowanieKoniec":"1079", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski, Król Polski (od 1076)", "narodziny":"1042", "zgon":"1081", "narodowosc":"polska", "info":"Znany też jako Bolesław II Szczodry", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"8",  "nazwa":"Władysław I Herman", "panowanieStart":"1079", "panowanieKoniec":"1102", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski", "narodziny":"1043", "zgon":"1102", "narodowosc":"polska", "info":"W latach 1086-1089 współrządził z synem brata Bolesława II - Mieszko Bolesławowicem, a w latach 1098-1102 z synami: Bolesławem i Zbigniewem", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"9",  "nazwa":"Bolesław III Krzywousty", "panowanieStart":"1102", "panowanieKoniec":"1138", "panstwo":"Polska Piastowska", "funkcja":"Książe Polski", "narodziny":"1086", "zgon":"1138", "narodowosc":"polska", "info":"W latach 1102-1107 współrządził z bratem Zbigniewem", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"10",  "nazwa":"Władysław II Wygnaniec", "panowanieStart":"1138", "panowanieKoniec":"1146", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1105", "zgon":"1159", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"11",  "nazwa":"Bolesław IV Kędzierzawy", "panowanieStart":"1146", "panowanieKoniec":"1173", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1121", "zgon":"1173", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"12",  "nazwa":"Mieszko III Stary", "panowanieStart":"1173", "panowanieKoniec":"1177", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1122", "zgon":"1202", "narodowosc":"polska", "info":"Po raz pierwszy", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"13",  "nazwa":"Kazimierz II Sprawiedliwy", "panowanieStart":"1177", "panowanieKoniec":"1191", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1138", "zgon":"1194", "narodowosc":"polska", "info":"Po raz pierwszy", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"14",  "nazwa":"Mieszko III Stary", "panowanieStart":"1191", "panowanieKoniec":"1191", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski",  "narodowosc":"polska", "info":"Po raz drugi", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"15",  "nazwa":"Kazimierz II Sprawiedliwy", "panowanieStart":"1191", "panowanieKoniec":"1194", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"Po raz drugi", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"16",  "nazwa":"Leszek I Biały", "panowanieStart":"1194", "panowanieKoniec":"1198", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1184", "zgon":"1227", "narodowosc":"polska", "info":"Po raz pierwszy", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"17",  "nazwa":"Mieszko III Stary", "panowanieStart":"1198", "panowanieKoniec":"1199", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski",  "narodowosc":"polska", "info":"Po raz trzeci", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"18",  "nazwa":"Leszek I Biały", "panowanieStart":"1199", "panowanieKoniec":"1199", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"Po raz drugi", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"19",  "nazwa":"Mieszko III Stary", "panowanieStart":"1199", "panowanieKoniec":"1202", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski",  "narodowosc":"polska", "info":"Po raz czwarty", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"20",  "nazwa":"Władysław III Laskonogi", "panowanieStart":"1202", "panowanieKoniec":"1202", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1161", "zgon":"1231", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"21",  "nazwa":"Leszek I Biały", "panowanieStart":"1202", "panowanieKoniec":"1210", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"Po raz trzeci", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"22",  "nazwa":"Mieszko IV Plątonogi", "panowanieStart":"1210", "panowanieKoniec":"1211", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1146", "zgon":"1211", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"23",  "nazwa":"Leszek I Biały", "panowanieStart":"1211", "panowanieKoniec":"1225", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"Po raz czwarty", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"24",  "nazwa":"Henryk I Brodaty", "panowanieStart":"1225", "panowanieKoniec":"1225", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1170", "zgon":"1238", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"25",  "nazwa":"Leszek I Biały", "panowanieStart":"1225", "panowanieKoniec":"1227", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"Po raz piąty. Koniec zasady zwierzchnictwa krakowskiego nad Polską", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"26",  "nazwa":"Władysław III Laskonogi", "panowanieStart":"1228", "panowanieKoniec":"1229", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"27",  "nazwa":"Konrad I Mazowiecki", "panowanieStart":"1229", "panowanieKoniec":"1232", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1187", "zgon":"1247", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"28",  "nazwa":"Henryk I Brodaty", "panowanieStart":"1232", "panowanieKoniec":"1238", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"29",  "nazwa":"Henryk II Pobożny", "panowanieStart":"1238", "panowanieKoniec":"1241", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1207", "zgon":"1241", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"30",  "nazwa":"Bolesław Rogatka", "panowanieStart":"1241", "panowanieKoniec":"1241", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1225", "zgon":"1278", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"31",  "nazwa":"Konrad I Mazowiecki", "panowanieStart":"1241", "panowanieKoniec":"1243", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"32",  "nazwa":"Bolesław V Wstydliwy", "panowanieStart":"1243", "panowanieKoniec":"1279", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1226", "zgon":"1279", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"33",  "nazwa":"Leszek Czarny", "panowanieStart":"1279", "panowanieKoniec":"1288", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1243", "zgon":"1288", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"34",  "nazwa":"Bolesław Mazowiecki", "panowanieStart":"1288", "panowanieKoniec":"1288", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1251", "zgon":"1313", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"35",  "nazwa":"Henryk Prawy", "panowanieStart":"1288", "panowanieKoniec":"1289", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1258", "zgon":"1290", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"36",  "nazwa":"Bolesław Mazowiecki", "panowanieStart":"1289", "panowanieKoniec":"1289", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"37",  "nazwa":"Władysław IV Łokietek", "panowanieStart":"1289", "panowanieKoniec":"1289", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodziny":"1260", "zgon":"1333", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"38",  "nazwa":"Henryk Prawy", "panowanieStart":"1289", "panowanieKoniec":"1290", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"39",  "nazwa":"Przemysł II", "panowanieStart":"1290", "panowanieKoniec":"1291", "panstwo":"Polska Piastowska - rozbicie dzielnicowe", "funkcja":"Książe Polski, Król Polski", "narodziny":"1257", "zgon":"1296", "narodowosc":"polska", "info":"W latach 1295-1296 Król Polski, chociaż tak naprawdę WielkoPolski i Pomorza Gdańskiego", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"40",  "nazwa":"Wacław II", "panowanieStart":"1291", "panowanieKoniec":"1305", "panstwo":"Królestwo Polskie", "funkcja":"Król Czech, Król Polski", "narodziny":"1271", "zgon":"1305", "narodowosc":"czeska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"41",  "nazwa":"Wacław III", "panowanieStart":"1305", "panowanieKoniec":"1306", "panstwo":"Królestwo Polskie", "funkcja":"Król Czech, Król Polski", "narodziny":"1289", "zgon":"1306", "narodowosc":"czeska", "info":"Nigdy nie był w Polsce", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"42",  "nazwa":"Władysław IV Łokietek", "panowanieStart":"1306", "panowanieKoniec":"1333", "panstwo":"Królestwo Polskie", "funkcja":"Książe Polski, Król Polski", "narodowosc":"polska", "info":"Od 1320 Król Polski.", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"43",  "nazwa":"Kazimierz III Wielki", "panowanieStart":"1333", "panowanieKoniec":"1370", "panstwo":"Królestwo Polskie", "funkcja":"Król Polski", "narodziny":"1310", "zgon":"1370", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"44",  "nazwa":"Ludwik Węgierski", "panowanieStart":"1370", "panowanieKoniec":"1382", "panstwo":"Królestwo Polskie", "funkcja":"Król Polski, Król Węgier", "narodziny":"1326", "zgon":"1382", "narodowosc":"węgierska", "info":"", "epoka":"Średniowiecze"
+  },
+  {
+    "numer":"45",  "nazwa":"Jadwiga Andegaweńska", "panowanieStart":"1384", "panowanieKoniec":"1386", "panstwo":"Królestwo Polskie", "funkcja":"Król Polski", "narodziny":"1373", "zgon":"1399", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+  }],
+  "jagiellonowie":[
+    {
+      "numer":"46",  "nazwa":"Władysław II Jagiełło", "panowanieStart":"1386", "panowanieKoniec":"1434", "panstwo":"Polska Jagiellonów", "funkcja":"Król Polski, Najwyższy Książe Litewski", "narodziny":"1362", "zgon":"1434", "narodowosc":"litewska", "info":"", "epoka":"Średniowiecze"
+    },
+    {
+      "numer":"47",  "nazwa":"Władysław III Warneńczyk", "panowanieStart":"1434", "panowanieKoniec":"1444", "panstwo":"Polska Jagiellonów", "funkcja":"Król Polski, Najwyższy Książe Litewski, Król Węgier(1440-1444)", "narodziny":"1424", "zgon":"1444", "narodowosc":"polska", "info":"", "epoka":"Średniowiecze"
+    },
+    {
+      "numer":"48",  "nazwa":"Kazimierz IV Jagiellończyk", "panowanieStart":"1447", "panowanieKoniec":"1492", "panstwo":"Polska Jagiellonów", "funkcja":"Król Polski, Wielki Książe Litewski", "narodziny":"1427", "zgon":"1492", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"49",  "nazwa":"Jan I Olbracht", "panowanieStart":"1492", "panowanieKoniec":"1501", "panstwo":"Polska Jagiellonów", "funkcja":"Król Polski", "narodziny":"1459", "zgon":"1501", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"50",  "nazwa":"Aleksander Jagiellończyk", "panowanieStart":"1501", "panowanieKoniec":"1506", "panstwo":"Polska Jagiellonów", "funkcja":"Król Polski, Wielki Książe Litewski", "narodziny":"1461", "zgon":"1506", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"51",  "nazwa":"Zygmunt I Stary", "panowanieStart":"1506", "panowanieKoniec":"1548", "panstwo":"Polska Jagiellonów", "funkcja":"Król Polski, Wielki Książe Litewski", "narodziny":"1467", "zgon":"1548", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"52",  "nazwa":"Zygmunt II August", "panowanieStart":"1548", "panowanieKoniec":"1572", "panstwo":"Polska Jagiellonów", "funkcja":"Król Polski, Wielki Książe Litewski", "narodziny":"1520", "zgon":"1572", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    }
+  ],
+  "elekcyjni":[
+    {
+      "numer":"53",  "nazwa":"Henryk Walezy", "panowanieStart":"1573", "panowanieKoniec":"1575", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Król Francji (1574-1589)", "narodziny":"1551", "zgon":"1589", "narodowosc":"francuska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"54",  "nazwa":"Stefan Batory", "panowanieStart":"1576", "panowanieKoniec":"1586", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Książe Siedmiogrodzki(1571-1586)", "narodziny":"1533", "zgon":"1586", "narodowosc":"węgierska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"55",  "nazwa":"Zygmunt III Waza", "panowanieStart":"1587", "panowanieKoniec":"1632", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Król Szwecji (1592-1599)", "narodziny":"1566", "zgon":"1632", "narodowosc":"szwedzka", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"56",  "nazwa":"Władysław IV Waza", "panowanieStart":"1632", "panowanieKoniec":"1648", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Car Rosji (1610)", "narodziny":"1595", "zgon":"1648", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"57",  "nazwa":"Jan II Kazimierz", "panowanieStart":"1648", "panowanieKoniec":"1668", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski", "narodziny":"1609", "zgon":"1672", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"58",  "nazwa":"Michał Korybut Wiśniowiecki", "panowanieStart":"1669", "panowanieKoniec":"1673", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski", "narodziny":"1640", "zgon":"1673", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"59",  "nazwa":"Jan III Sobieski", "panowanieStart":"1674", "panowanieKoniec":"1696", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski", "narodziny":"1629", "zgon":"1696", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"60",  "nazwa":"August II Mocny", "panowanieStart":"1697", "panowanieKoniec":"1704", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Elektor Saksonii (1694-1733)", "narodziny":"1670", "zgon":"1733", "narodowosc":"niemiecka", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+    "numer":"61",  "nazwa":"Stanisław I Leszczyński", "panowanieStart":"1704", "panowanieKoniec":"1709", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Książę Lotaryngii i Baru 1738–1766", "narodziny":"1677", "zgon":"1766", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"62",  "nazwa":"August II Mocny", "panowanieStart":"1709", "panowanieKoniec":"1733", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Elektor Saksonii (1694-1733)", "narodowosc":"niemiecka", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"63",  "nazwa":"Stanisław I Leszczyński", "panowanieStart":"1733", "panowanieKoniec":"1736", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Książę Lotaryngii i Baru 1738–1766", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"64",  "nazwa":"August III Sas", "panowanieStart":"1733", "panowanieKoniec":"1763", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski, Elektor Saksonii (1733-1763)", "narodziny":"1696", "zgon":"1763", "narodowosc":"niemiecka", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"65",  "nazwa":"Stanisław II August Poniatowski", "panowanieStart":"1764", "panowanieKoniec":"1795", "panstwo":"Rzeczpospolita Obojga Narodów", "funkcja":"Król Polski", "narodziny":"1732", "zgon":"1798", "narodowosc":"polska", "info":"", "epoka":"Epoka Nowożytna"
+    }
+  ],
+  "podlegli":[
+    {
+      "numer":"66",  "nazwa":"Fryderyk I August", "panowanieStart":"1807", "panowanieKoniec":"1815", "panstwo":"Księstwo Warszawskie", "funkcja":"Książe warszawski, Król Saksonii (1806-1827)", "narodziny":"1750", "zgon":"1827", "narodowosc":"niemiecka", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"67",  "nazwa":"Aleksander I Pawłowicz", "panowanieStart":"1815", "panowanieKoniec":"1825", "panstwo":"Królestwo Polskie (kongresowe)", "funkcja":"Car Rosji", "narodziny":"1777", "zgon":"1825", "narodowosc":"rosyjska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"68",  "nazwa":"Mikołaj I Pawłowicz", "panowanieStart":"1825", "panowanieKoniec":"1855", "panstwo":"Królestwo Polskie (kongresowe)", "funkcja":"Car Rosji, Król Polski (1829-1831)", "narodziny":"1796", "zgon":"1855", "narodowosc":"rosyjska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"69",  "nazwa":"Aleksander II Mikołajewicz", "panowanieStart":"1855", "panowanieKoniec":"1881", "panstwo":"Królestwo Polskie (kongresowe)", "funkcja":"Car Rosji", "narodziny":"1818", "zgon":"1881", "narodowosc":"rosyjska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"70",  "nazwa":"Aleksander III Aleksandrowicz", "panowanieStart":"1881", "panowanieKoniec":"1894", "panstwo":"Królestwo Polskie (kongresowe)", "funkcja":"Car Rosji", "narodziny":"1845", "zgon":"1894", "narodowosc":"rosyjska", "info":"", "epoka":"Epoka Nowożytna"
+    },
+    {
+      "numer":"71",  "nazwa":"Mikołaj II Aleksandrowicz", "panowanieStart":"1894", "panowanieKoniec":"1917", "panstwo":"Królestwo Polskie (kongresowe)", "funkcja":"Car Rosji", "narodziny":"1868", "zgon":"1918", "narodowosc":"rosyjska", "info":"", "epoka":"Epoka Nowożytna"
+    }
+  ],
+  "II_RP":[
+    {
+      "numer":"72",  "nazwa":"Józef Piłsudski", "panowanieStart":"1918", "panowanieKoniec":"1922", "panstwo":"II RP", "funkcja":"Naczelny Dowódca Wojsk Polskich, Naczelnik Państwa", "narodziny":"1867", "zgon":"1935", "narodowosc":"polska", "info":"", "epoka":"Czasy Współczesne"
+    },
+    {
+      "numer":"73",  "nazwa":"Gabriel Narutowicz", "panowanieStart":"1922", "panowanieKoniec":"1922", "panstwo":"II RP", "funkcja":"Prezydent Polski", "narodziny":"1865", "zgon":"1922", "narodowosc":"polska", "info":"", "epoka":"Czasy Współczesne"
+    },
+    {
+      "numer":"74",  "nazwa":"Stanisław Wojciechowski", "panowanieStart":"1922", "panowanieKoniec":"1926", "panstwo":"II RP", "funkcja":"Prezydent Polski", "narodziny":"1869", "zgon":"1953", "narodowosc":"polska", "info":"", "epoka":"Czasy Współczesne"
+    },
+    {
+      "numer":"75",  "nazwa":"Ignacy Mościcki", "panowanieStart":"1926", "panowanieKoniec":"1939", "panstwo":"II RP", "funkcja":"Prezydent Polski", "narodziny":"1867", "zgon":"1946", "narodowosc":"polska", "info":"", "epoka":"Czasy Współczesne"
+    }
+  ]
+}
+/*/ w sumie jak się władca powtarza to mogę nie powtórzyć paramtru urodzin i śmierci i wtedy władcy nie sfiltruje 2 x przy latach życia i średniej - do przemyślenia

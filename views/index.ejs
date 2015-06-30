@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head lang="pl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zdrowy rozsądek</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mainStylesheet.css" rel="stylesheet">
+
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-ui-router.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/tekstyService.js"></script>
+    <script src="js/mainController.js"></script>
+</head>
+<body ng-app="meliaszApp">
+<div class="container">
+    <div id="banner">
+        <img src="img/banner.png" class="img-responsive">
+    </div>
+    <div class="row">
+        <div id="sidebar" class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+            <ul class="nav navbar-inverse">
+                <li class="active">
+                    <a href="/#/teksty">Strona główna</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Teksty<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/#">Nowości</a></li>
+                        <li><a href="/#">Komentarze</a></li>
+                        <li><a href="/#">Pomysły</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/#/rzady">Historia rządów Polski</a>
+                </li>
+                <li>
+                    <a href="#">Lista posłów</a>
+                </li>
+                <li>
+                    <a href="#">Polska terytorialnie</a>
+                </li>
+                <li>
+                    <a href="#">Kontakt</a>
+                </li>
+            </ul>
+            <div class="clearfix visible-lg"></div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+            <div id="quotes" ng-controller="aforyzmyCtrl">
+                <p><span class="citeHeader">Cytat na dziś: </span>{{cite}}</p>
+            </div>
+            <ui-view></ui-view>
+        </div>
+        <div id="loginbar" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <nav ng-controller="NavCtrl">
+                <ul class="nav navbar-inverse">
+                    <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+                    <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+                    <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+                    <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>
+<!--VIEW 1 - teksty-->
+
+<script type="text/ng-template" id="/teksty.html">
+
+    <div id="content">
+        <div class="teksty-logged">
+            <form ng-submit="addTekst()" ng-show="isLoggedIn()">
+                <button type="submit" class="btn btn-primary">Dodaj</button>
+                <div ng-hide="isLoggedIn()">
+                    <h3>You need to <a href="/#/login">Log In</a>
+                        or <a href="/#/register">Register</a> before you can add a post.</h3>
+                </div>
+                <input type="text" ng-model="title" placeholder="tytuł" class="form-control">
+                <input type="text" ng-model="contents" placeholder="treść" class="form-control">
+
+                <form role="form">
+                    <label class="checkbox-inline"><input type="checkbox" ng-model="category.nowosci">Nowości</label>
+                    <label class="checkbox-inline"><input type="checkbox"
+                                                          ng-model="category.komentarze">Komentarze</label>
+                    <label class="checkbox-inline"><input type="checkbox" ng-model="category.pomysly">Pomysły</label>
+                </form>
+            </form>
+        </div>
+        <div class="teksty" ng-repeat="tekst in teksty">
+            <div class="page-header">
+                <h2 class="teksty-header">t{{tekst.title}}</h2>
+                <h6><span class="date-author">Data: </span>{{tekst.date | date}}</h6>
+                <h6><span class="date-author">Autor: </span>{{tekst.author}},
+                    <span class="date-author">Kategoria: </span>{{tekst.category}}</h6>
+            </div>
+            <div class="contents">
+                <p>
+                    {{tekst.contents}}
+                    Lorem ipsum dolor sit amet sapien et ultrices interdum. Nulla et felis in turpis dolor, luctus leo
+                    nec
+                    nunc
+                    semper eu, ullamcorper wisi eget ipsum at ipsum. Vestibulum ante ipsum at augue. Pellentesque
+                    habitant
+                    morbi
+                    tristique tempus ut, consequat lorem a velit eleifend adipiscing dui sit amet dui eu libero.
+                    Maecenas
+                    tortor
+                    libero, id rutrum sapien. Nam turpis at mauris eget nunc felis, malesuada pretium. Vestibulum
+                    euismod
+                    convallis justo. Praesent gravida vel, quam. Nulla in faucibus in, dapibus eu, luctus et wisi. Sed
+                    dignissim
+                    porttitor, arcu sed elit eu sem in faucibus orci luctus tellus suscipit adipiscing. Vestibulum
+                    sollicitudin.
+                    Praesent quis ultricies nulla, accumsan dictum, laoreet metus et turpis. Vivamus lacus vestibulum
+                    quis,
+                    dui.
+                    Aliquam eget odio. Aliquam tellus enim, euismod id, luctus et pede quis arcu. Pellentesque quam et
+                    leo.
+                    Integer hendrerit sollicitudin. Cras eu tortor. Nulla facilisi. Nulla facilisi. Mauris mi eget leo
+                    ac
+                    est eu
+                    odio. Donec a lorem eget lectus rhoncus pede lobortis velit. Nunc vulputate. Morbi orci. Nam at
+                    sollicitudin
+                    a, ultricies vitae, mollis consectetuer. Sed aliquet id, odio. Donec non eros. Quisque quis
+                    placerat.
+                    <a href="#/teksty/{{tekst._id}}">Comments</a>
+                    <span ng-show="tekst.author">
+  posted by <a>{{tekst.author}}</a> |
+</span>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Autor strony i tekstów: Paweł Szablowski
+    </footer>
+</script>
+
+<!--VIEW 2 - REGISTER-->
+
+<script type="text/ng-template" id="/register.html">
+    <div class="page-header">
+        <h1>Rejestracja</h1>
+    </div>
+
+    <div ng-show="error" class="alert alert-danger row">
+        <span>{{ error.message }}</span>
+    </div>
+
+    <form ng-submit="register()"
+          style="margin-top:30px;">
+        <h3>Uzupełnij</h3>
+
+        <div class="form-group">
+            <input type="text"
+                   class="form-control"
+                   placeholder="Username"
+                   ng-model="user.username">
+        </div>
+        <div class="form-group">
+            <input type="password"
+                   class="form-control"
+                   placeholder="Password"
+                   ng-model="user.password">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</script>
+
+<!--VIEW 3 - LOGIN-->
+
+<script type="text/ng-template" id="/login.html">
+    <div class="page-header">
+        <h1>Logowanie</h1>
+    </div>
+
+    <div ng-show="error" class="alert alert-danger row">
+        <span>{{ error.message }}</span>
+    </div>
+
+    <form ng-submit="logIn()"
+          style="margin-top:30px;">
+        <h3>Uzupełnij</h3>
+
+        <div class="form-group">
+            <input type="text"
+                   class="form-control"
+                   placeholder="Username"
+                   ng-model="user.username">
+        </div>
+        <div class="form-group">
+            <input type="password"
+                   class="form-control"
+                   placeholder="Password"
+                   ng-model="user.password">
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+</script>
+<script type="text/ng-template" id="/tekst.html">
+    <div class="page-header">
+        <h3>
+            <a ng-show="tekst.link" href="{{tekst.link}}">
+                {{tekst.title}}
+            </a>
+      <span ng-hide="tekst.link">
+        {{tekst.title}}
+      </span>
+        </h3>
+    </div>
+
+    <div ng-repeat="comment in tekst.comments">
+        {{comment.author}}, {{comment.date}}, {{comment.body}}
+        <form ng-submit="addComment()" ng-show="isLoggedIn()"
+              style="margin-top:30px;">
+            <h3>Add a new comment</h3>
+
+            <div ng-hide="isLoggedIn()">
+                <h3>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before
+                    you can comment.</h3>
+            </div>
+            <div class="form-group">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Comment"
+                       ng-model="body">
+            </div>
+            <button type="submit" class="btn btn-primary">Dodaj</button>
+        </form>
+    </div>
+</script>
+<script type="text/ng-template" id="/rzady.html">
+    <form role="form" class="form-inline">
+        <div class="form-group">
+            <label for="query">Search:</label>
+            <input type="search" ng-model="query">
+            <label for="order1">Sort by:</label>
+            <select class="form-control" ng-model="order">
+                <option value="name">Chronologicznie</option>
+                <option value="-date">Najstarsi władcyt</option>
+                <option value="category">Najdłużej rządzący</option>
+            </select>
+        </div>
+    </form>
+
+    <div id="rulers" class="table-responsive">
+
+<table class="table table-condensed table-bordered">
+    <thead> Legendarni Władcy
+    <tr>
+        <th>
+            L.p.
+        </th>
+        <th>
+            Władca
+        </th>
+        <th>
+           Od
+        </th>
+        <th>
+            Do
+        </th>
+        <th>
+            Tytuł
+        </th>
+        <th>
+            Rok urodzenia
+        </th>
+        <th>
+            Rok zgonu
+        </th>
+        <th>
+            Narodowość
+        </th>
+        <th>
+            Dodatkowe info
+        </th>
+    </tr>
+    </thead>
+    <tbody class="table-hover">
+    <tr ng-repeat="wladca in legendarni">
+        <td>
+            {{wladca.numer}}
+        </td>
+        <td>
+            {{wladca.nazwa}}
+        </td>
+        <td>
+            {{wladca.panowanieStart}}
+        </td>
+        <td>
+            {{wladca.panowanieKoniec}}
+        </td>
+        <td>
+            {{wladca.funkcja}}
+        </td>
+        <td>
+            {{wladca.narodziny}}
+        </td>
+        <td>
+            {{wladca.zgon}}
+        </td>
+        <td>
+            {{wladca.narodowosc}}
+        </td>
+        <td>
+            {{wladca.info}}
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+        <table class="table table-condensed table-bordered">
+            <thead> Polska Piastów
+            <tr>
+                <th>
+                    L.p.
+                </th>
+                <th>
+                    Władca
+                </th>
+                <th>
+                    Od
+                </th>
+                <th>
+                    Do
+                </th>
+                <th>
+                    Lata panowania
+                </th>
+                <th>
+                    Tytuł
+                </th>
+                <th>
+                    Rok urodzenia
+                </th>
+                <th>
+                    Rok zgonu
+                </th>
+                <th>
+                    Czas życia
+                </th>
+                <th>
+                    Narodowość
+                </th>
+                <th>
+                    Dodatkowe info
+                </th>
+            </tr>
+            </thead>
+            <tbody class="table-hover">
+            <tr ng-repeat="wladca in piastowie">
+                <td>
+                    {{wladca.numer}}
+                </td>
+                <td>
+                    {{wladca.nazwa}}
+                </td>
+                <td>
+                    {{wladca.panowanieStart}}
+                </td>
+                <td>
+                    {{wladca.panowanieKoniec}}
+                </td>
+                <td>
+                    {{wladca.panowanieKoniec - wladca.panowanieStart}}
+                </td>
+                <td>
+                    {{wladca.funkcja}}
+                </td>
+                <td>
+                    {{wladca.narodziny}}
+                </td>
+                <td>
+                    {{wladca.zgon}}
+                </td>
+                <td>
+                    {{wladca.zgon - wladca.narodziny}}
+                </td>
+                <td>
+                    {{wladca.narodowosc}}
+                </td>
+                <td>
+                    {{wladca.info}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+</div>
+</script>
+</body>
+</html>
