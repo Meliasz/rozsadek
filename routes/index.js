@@ -1,11 +1,11 @@
 var express = require('express');
-var passport = require('passport');
 var jwt = require('express-jwt');
+var router = express.Router();
 var auth = jwt({
     secret: 'SECRET',
     userProperty: 'payload'
 });
-var router = express.Router();
+
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -13,6 +13,7 @@ router.get('/', function (req, res) {
 });
 
 var mongoose = require('mongoose');
+var passport = require('passport');
 var Tekst = mongoose.model('Tekst');
 var Comment = mongoose.model('Comment');
 var User = mongoose.model('User');
@@ -59,21 +60,17 @@ router.param('tekst', function (req, res, next, id) {
 
 router.get('/teksty/:tekst', function (req, res, next) {
     console.log("Jestem w /teksty/:id, Method: get (one tekst)");
-    req.tekst.populate('comments', function(err,tekst){ //obczaić czy nie musi być osobny router get
+    req.tekst.populate('comments', function(err,tekst){
         if(err){
             return next(err);
         }
+        res.json(tekst);
     });
-    res.json(req.tekst); //res.json(tekst);
 });
 
 
-router.delete('/teksty/:tekst', function (req, res, next) {
-    //for (var key in req.params) {
-    //       if (req.params.hasOwnProperty(key)) {
-    //           console.log(key + " :: " + req.params[key])
-    //       }
-    //   }
+router.delete('/teksty/:tekst', auth, function (req, res, next) {
+
     console.log("Jestem w /teksty, Method: DELETE" + JSON.stringify(req.params));
     Tekst.findByIdAndRemove(req.params.tekst, req.body, function (err, tekst) {
         console.log("CallBACK DELETE'a +" + tekst);
@@ -85,7 +82,7 @@ router.delete('/teksty/:tekst', function (req, res, next) {
     });
 });
 
-router.put('/teksty/:tekst', function (req, res, next) {
+router.put('/teksty/:tekst', auth, function (req, res, next) {
 
     console.log("Jestem w /teksty, Method: PUT" + JSON.stringify(req.params));
     Tekst.findByIdAndUpdate(req.params.tekst, req.body, function (err, tekst) {
@@ -106,7 +103,7 @@ router.put('/teksty/:tekst', function (req, res, next) {
 
 router.post('/teksty/:tekst/comments', auth, function (req, res, next) {
     var comment = new Comment(req.body);
-    comment.tekst = req.tekst; //przypuszczalnie może być tu błąd, sprawdzić (powiązanie z teksty)
+    comment.tekst = req.tekst;
     comment.author = req.payload.username;
     comment.save(function (err, comment) {
         if (err) {
@@ -128,14 +125,15 @@ router.post('/teksty/:tekst/comments', auth, function (req, res, next) {
 router.post('/register', function (req, res, next) {
     if (!req.body.username || !req.body.password) {
         return res.status(400).json({
-            message: "Wypełnij puste pola"
-        })
+            message: 'Wypełnij puste pola'
+        });
     }
     var user = new User();
 
     user.username = req.body.username;
+    console.log('Przekazuję username' + user.username);
     user.setPassword(req.body.password);
-
+    console.log('Przekazuję haslo ??');
     user.save(function (err) {
         if (err) {
             return next(err);

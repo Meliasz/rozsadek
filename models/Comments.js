@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 var CommentSchema = new mongoose.Schema({
     body: String,
-    date: {type: Date, default: Date.now()},
+    date: {type: Date, default: new Date(Date.UTC(Date.now()))},
     tekst: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tekst' }],
     author:String
 });

@@ -7,8 +7,7 @@ var TekstSchema = new mongoose.Schema({
     contents: String,
     category: String,
     title:String,
-    //link:String,
-    date: {type: Date, isoDateTime: Date.now()},
+    date: {type: Date, default: new Date(Date.UTC(Date.now()))},
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
     author:String
 });

@@ -8,8 +8,6 @@ var UserSchema = new mongoose.Schema({
     salt: String
 });
 
-mongoose.model('User', UserSchema);
-
 UserSchema.methods.generateJWT = function(){
   var today = new Date();
     var exp = new Date(today);
@@ -30,3 +28,5 @@ UserSchema.methods.validPassword = function(password){
     var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
     return this.hash === hash;
 };
+
+mongoose.model('User', UserSchema);
