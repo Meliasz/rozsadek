@@ -6,18 +6,23 @@
     <title>Zdrowy rozsądek</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/mainStylesheet.css" rel="stylesheet">
-
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
     <script src="js/lib/angular.js"></script>
     <script src="js/lib/angular-ui-router.js"></script>
     <script src="js/core.js"></script>
     <script src="js/tekstyService.js"></script>
-    <script src="js/mainController.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
 </head>
 <body ng-app="meliaszApp">
 <div class="container">
     <div id="banner">
-        <img src="img/banner.png" class="img-responsive">
+        <img src="img/banner.png" id="bannerImg" class="img-responsive">
+
+        <h2 id="bannerText"><span></span></h2>
     </div>
     <div class="row">
         <div id="sidebar" class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
@@ -28,8 +33,8 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Teksty<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/#">Nowości</a></li>
-                        <li><a href="/#">Komentarze</a></li>
+                        <li><a href="/#">Informacje</a></li>
+                        <li><a href="/#">Opinie</a></li>
                         <li><a href="/#">Pomysły</a></li>
                     </ul>
                 </li>
@@ -47,23 +52,28 @@
                 </li>
             </ul>
             <div class="clearfix visible-lg"></div>
+            <div>
+                <nav ng-controller="NavCtrl" id="loginbar">
+                    <ul class="nav navbar-inverse">
+                        <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+                        <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Wyloguj</a></li>
+                        <li ng-hide="isLoggedIn()"><a href="/#/login">Zaloguj</a></li>
+                        <li ng-hide="isLoggedIn()"><a href="/#/register">Zarejestruj</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+        <div class="col-lg-10 col-md-10 col-sm-9 col-xs-8">
             <div id="quotes" ng-controller="aforyzmyCtrl">
-                <p><span class="citeHeader">Cytat na dziś: </span>{{cite}}</p>
+                <p>
+                    <span class="citeHeader">Cytat na dziś: </span>{{cite}}
+                    <a class="mailto" id="contact" href="mailto:xblacalxbig@interiax.pl"
+                       onmouseover="this.href=this.href.replace(/x/g,'');">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Kontakt</a></p>
             </div>
             <ui-view></ui-view>
         </div>
-        <div id="loginbar" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-            <nav ng-controller="NavCtrl">
-                <ul class="nav navbar-inverse">
-                    <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
-                    <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
-                    <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
-                    <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
-                </ul>
-            </nav>
-        </div>
+
     </div>
 
 </div>
@@ -74,73 +84,55 @@
     <div id="content">
         <div class="teksty-logged">
             <form ng-submit="addTekst()" ng-show="isLoggedIn()">
-                <button type="submit" class="btn btn-primary">Dodaj</button>
-                <div ng-hide="isLoggedIn()">
-                    <h3>You need to <a href="/#/login">Log In</a>
-                        or <a href="/#/register">Register</a> before you can add a post.</h3>
-                </div>
                 <input type="text" ng-model="title" placeholder="tytuł" class="form-control">
-                <input type="text" ng-model="contents" placeholder="treść" class="form-control">
-
-                <form role="form">
-                    <label class="checkbox-inline"><input type="checkbox" ng-model="category.nowosci">Nowości</label>
-                    <label class="checkbox-inline"><input type="checkbox"
-                                                          ng-model="category.komentarze">Komentarze</label>
-                    <label class="checkbox-inline"><input type="checkbox" ng-model="category.pomysly">Pomysły</label>
-                </form>
+                <textarea ng-model="contents" placeholder="treść" class="form-control" id="contentsText"></textarea>
+                <label class="radio-inline"><input type="radio" ng-model="category"
+                                                   value="Informacje">Informacje</label>
+                <label class="radio-inline"><input type="radio" ng-model="category" value="Opinie">Opinie</label>
+                <label class="radio-inline"><input type="radio" ng-model="category" value="Pomysły">Pomysły</label>
+                <button type="submit" class="btn btn-primary">Dodaj</button>
             </form>
         </div>
-        <div class="teksty" ng-repeat="tekst in teksty">
-            <div class="page-header">
-                <h2 class="teksty-header">t{{tekst.title}}</h2>
-                <h6><span class="date-author">Data: </span>{{tekst.date | date}}</h6>
-                <h6><span class="date-author">Autor: </span>{{tekst.author}},
-                    <span class="date-author">Kategoria: </span>{{tekst.category}}</h6>
+
+        <form role="form" class="form-inline" ng-hide="isLoggedIn()">
+            <div class="form-group neverDisplay">
+                <label for="tekstyOrder">Wyświetl:</label>
+                <select ng-model="tekstyOrder" id="tekstyOrder" class="order form-control">
+                    <option value="-date">Wszystko</option>
+                </select>
             </div>
+            <div class="form-group">
+                <label for="categorySelect">Wyświetl: </label>
+                <select ng-model="category" id="categorySelect" class="order form-control">
+                    <option value="">Wszystkie</option>
+                    <option value="Informacje">Informacje</option>
+                    <option value="Opinie">Opinie</option>
+                    <option value="Pomysły">Pomysły</option>
+                </select>
+            </div>
+        </form>
+
+        <div class="teksty" ng-repeat="tekst in teksty | orderBy:tekstyOrder | filter:category">
+            <div class="page-header">
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+                    <h2 class="teksty-header"><a href="#/teksty/{{tekst._id}}" id="tekstHeader">{{tekst.title}}</a></h2>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6">
+                    <h6><span class="date-author">Data: </span>{{tekst.date | datePolish}}</h6>
+                    <h6><span class="date-author">Autor: </span>{{tekst.author}},
+                        <span class="date-author">Kategoria: </span>{{tekst.category}}</h6>
+                </div>
+            </div>
+
             <div class="contents">
                 <p>
-                    {{tekst.contents}}
-                    Lorem ipsum dolor sit amet sapien et ultrices interdum. Nulla et felis in turpis dolor, luctus leo
-                    nec
-                    nunc
-                    semper eu, ullamcorper wisi eget ipsum at ipsum. Vestibulum ante ipsum at augue. Pellentesque
-                    habitant
-                    morbi
-                    tristique tempus ut, consequat lorem a velit eleifend adipiscing dui sit amet dui eu libero.
-                    Maecenas
-                    tortor
-                    libero, id rutrum sapien. Nam turpis at mauris eget nunc felis, malesuada pretium. Vestibulum
-                    euismod
-                    convallis justo. Praesent gravida vel, quam. Nulla in faucibus in, dapibus eu, luctus et wisi. Sed
-                    dignissim
-                    porttitor, arcu sed elit eu sem in faucibus orci luctus tellus suscipit adipiscing. Vestibulum
-                    sollicitudin.
-                    Praesent quis ultricies nulla, accumsan dictum, laoreet metus et turpis. Vivamus lacus vestibulum
-                    quis,
-                    dui.
-                    Aliquam eget odio. Aliquam tellus enim, euismod id, luctus et pede quis arcu. Pellentesque quam et
-                    leo.
-                    Integer hendrerit sollicitudin. Cras eu tortor. Nulla facilisi. Nulla facilisi. Mauris mi eget leo
-                    ac
-                    est eu
-                    odio. Donec a lorem eget lectus rhoncus pede lobortis velit. Nunc vulputate. Morbi orci. Nam at
-                    sollicitudin
-                    a, ultricies vitae, mollis consectetuer. Sed aliquet id, odio. Donec non eros. Quisque quis
-                    placerat.
-                    <a href="#/teksty/{{tekst._id}}">Comments</a>
-                    <span ng-show="tekst.author">
-  posted by <a>{{tekst.author}}</a> |
-</span>
+                    {{tekst.contents | cutContents}}
+                    <span ng-show="tekst.contents.length>1000"><a href="#/teksty/{{tekst._id}}"> Czytaj dalej</a></span>
                 </p>
-
             </div>
+            <button class="btn btn-primary" ng-click="deleteTekst(tekst._id)" ng-show="isLoggedIn()">Usuń</button>
         </div>
-
     </div>
-
-    <footer>
-        Autor strony i tekstów: Paweł Szablowski
-    </footer>
 </script>
 
 <!--VIEW 2 - REGISTER-->
@@ -154,8 +146,7 @@
         <span>{{ error.message }}</span>
     </div>
 
-    <form ng-submit="register()"
-          style="margin-top:30px;">
+    <form ng-submit="register()">
         <h3>Uzupełnij</h3>
 
         <div class="form-group">
@@ -185,8 +176,7 @@
         <span>{{ error.message }}</span>
     </div>
 
-    <form ng-submit="logIn()"
-          style="margin-top:30px;">
+    <form ng-submit="logIn()">
         <h3>Uzupełnij</h3>
 
         <div class="form-group">
@@ -204,121 +194,28 @@
         <button type="submit" class="btn btn-primary">Log In</button>
     </form>
 </script>
-<script type="text/ng-template" id="/tekst.html">
-    <div class="page-header">
-        <h3>
-            <a ng-show="tekst.link" href="{{tekst.link}}">
-                {{tekst.title}}
-            </a>
-      <span ng-hide="tekst.link">
-        {{tekst.title}}
-      </span>
-        </h3>
-    </div>
 
-    <div ng-repeat="comment in tekst.comments">
-        {{comment.author}}, {{comment.date}}, {{comment.body}}
-        <form ng-submit="addComment()" ng-show="isLoggedIn()"
-              style="margin-top:30px;">
-            <h3>Add a new comment</h3>
+<!--VIEW 4 - WLADCY-->
 
-            <div ng-hide="isLoggedIn()">
-                <h3>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before
-                    you can comment.</h3>
-            </div>
-            <div class="form-group">
-                <input type="text"
-                       class="form-control"
-                       placeholder="Comment"
-                       ng-model="body">
-            </div>
-            <button type="submit" class="btn btn-primary">Dodaj</button>
-        </form>
-    </div>
-</script>
 <script type="text/ng-template" id="/rzady.html">
-    <form role="form" class="form-inline">
+
+    <form role="form" class="form-inline" id="query-order">
         <div class="form-group">
-            <label for="query">Search:</label>
-            <input type="search" ng-model="query">
-            <label for="order1">Sort by:</label>
-            <select class="form-control" ng-model="order">
-                <option value="name">Chronologicznie</option>
-                <option value="-date">Najstarsi władcyt</option>
-                <option value="category">Najdłużej rządzący</option>
+            <label for="query">Sfiltruj</label>
+            <input type="search" ng-model="query" id="query">
+            <label for="order">Uporządkuj</label>
+            <select class="form-control" ng-model="order" id="order">
+                <option value="numer">Chronologicznie</option>
+                <option value="-(zgon - narodziny)">Najstarsi władcy</option>
+                <option value="-(panowanieKoniec-panowanieStart)">Najdłuższe kadencje</option>
             </select>
         </div>
     </form>
 
     <div id="rulers" class="table-responsive">
 
-<table class="table table-condensed table-bordered">
-    <thead> Legendarni Władcy
-    <tr>
-        <th>
-            L.p.
-        </th>
-        <th>
-            Władca
-        </th>
-        <th>
-           Od
-        </th>
-        <th>
-            Do
-        </th>
-        <th>
-            Tytuł
-        </th>
-        <th>
-            Rok urodzenia
-        </th>
-        <th>
-            Rok zgonu
-        </th>
-        <th>
-            Narodowość
-        </th>
-        <th>
-            Dodatkowe info
-        </th>
-    </tr>
-    </thead>
-    <tbody class="table-hover">
-    <tr ng-repeat="wladca in legendarni">
-        <td>
-            {{wladca.numer}}
-        </td>
-        <td>
-            {{wladca.nazwa}}
-        </td>
-        <td>
-            {{wladca.panowanieStart}}
-        </td>
-        <td>
-            {{wladca.panowanieKoniec}}
-        </td>
-        <td>
-            {{wladca.funkcja}}
-        </td>
-        <td>
-            {{wladca.narodziny}}
-        </td>
-        <td>
-            {{wladca.zgon}}
-        </td>
-        <td>
-            {{wladca.narodowosc}}
-        </td>
-        <td>
-            {{wladca.info}}
-        </td>
-    </tr>
-    </tbody>
-</table>
-
         <table class="table table-condensed table-bordered">
-            <thead> Polska Piastów
+            <thead>
             <tr>
                 <th>
                     L.p.
@@ -336,9 +233,6 @@
                     Lata panowania
                 </th>
                 <th>
-                    Tytuł
-                </th>
-                <th>
                     Rok urodzenia
                 </th>
                 <th>
@@ -347,21 +241,16 @@
                 <th>
                     Czas życia
                 </th>
-                <th>
-                    Narodowość
-                </th>
-                <th>
-                    Dodatkowe info
-                </th>
             </tr>
             </thead>
             <tbody class="table-hover">
-            <tr ng-repeat="wladca in piastowie">
+            <tr ng-repeat="wladca in wladcy | orderBy: order | filter:query">
+
                 <td>
                     {{wladca.numer}}
                 </td>
                 <td>
-                    {{wladca.nazwa}}
+                    <a href="#" ng-click="displayWladca(wladca)" class="wladcaNazwa"><span class="golden-text">{{wladca.nazwa}}</span></a>
                 </td>
                 <td>
                     {{wladca.panowanieStart}}
@@ -370,10 +259,7 @@
                     {{wladca.panowanieKoniec}}
                 </td>
                 <td>
-                    {{wladca.panowanieKoniec - wladca.panowanieStart}}
-                </td>
-                <td>
-                    {{wladca.funkcja}}
+                    {{wladca.panowanieKoniec - wladca.panowanieStart | panowanie}}
                 </td>
                 <td>
                     {{wladca.narodziny}}
@@ -382,19 +268,88 @@
                     {{wladca.zgon}}
                 </td>
                 <td>
-                    {{wladca.zgon - wladca.narodziny}}
+                    {{wladca.zgon - wladca.narodziny | czasZycia}}
                 </td>
-                <td>
-                    {{wladca.narodowosc}}
-                </td>
-                <td>
-                    {{wladca.info}}
-                </td>
+                <modal visible="showModal">
+
+                    <p class="wladca-records"><span class="golden-text">Władca : </span>{{chosen.nazwa}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Tytuł : </span>{{chosen.funkcja}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Państwo/okres : </span>{{chosen.panstwo}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Początek panowania : </span>{{chosen.panowanieStart}}
+                    </p>
+
+                    <p class="wladca-records"><span class="golden-text">Koniec panowania: </span>{{chosen.panowanieKoniec}}
+                    </p>
+
+                    <p class="wladca-records"><span class="golden-text">Lata panowania : </span>{{chosen.panowanieKoniec
+                        - chosen.panowanieStart | panowanie}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Rok urodzenia : </span>{{chosen.narodziny}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Rok zgonu : </span>{{chosen.zgon}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Czas życia : </span>{{chosen.zgon -
+                        chosen.narodziny | czasZycia}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Narodowość : </span>{{chosen.narodowosc}}</p>
+
+                    <p class="wladca-records"><span class="golden-text">Informacje : </span>{{chosen.info}}</p>
+
+                </modal>
             </tr>
             </tbody>
         </table>
 
-</div>
+    </div>
 </script>
+
+<!--VIEW 5 - TEKST-->
+
+<script type="text/ng-template" id="/tekst.html">
+    <form role="form" class="form-inline neverDisplay">
+        <div class="form-group">
+            <label for="tekstyOrder">Wyświetl</label>
+            <select id="tekstyOrder" class="order form-control">
+                <option value="-date">Wszystko</option>
+            </select>
+        </div>
+    </form>
+    <div class="teksty">
+        <div class="page-header">
+            <h2 class="teksty-header">{{tekst.title}}</h2>
+
+            <div class="contents">
+                <p>
+                    {{tekst.contents}}
+                </p>
+            </div>
+            <form ng-submit="addComment()" ng-show="isLoggedIn()">
+                <h3>Dodaj komentarz</h3>
+
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Dodaj komentarz"
+                           ng-model="body">
+                </div>
+                <button type="submit" class="btn btn-primary">Dodaj</button>
+            </form>
+            <div ng-hide="isLoggedIn()">
+                <h4>Należy się <a href="/#/login">zalogować</a> lub <a href="/#/register">zarejestrować</a>, aby dodać
+                    komentarz.
+                </h4>
+            </div>
+            <div ng-repeat="comment in tekst.comments">
+                <h6 id="commentContent"><span class="date-author">Komentarz: </span>{{comment.body}}</h6>
+                <h6><span class="date-author">Data komentarza: </span>{{comment.date | datePolish}},
+                    <span class="date-author">Autor komentarza: </span>{{comment.author}}</h6>
+            </div>
+        </div>
+    </div>
+</script>
+
 </body>
 </html>
